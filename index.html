@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>qlq.alexstore</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>qlq.alexstore</h1>
+    <button id="cart-button">🛒 (<span id="cart-count">0</span>)</button>
+  </header>
+  <main id="product-list">
+    <!-- Productos se insertarán aquí -->
+  </main>
+  <aside id="cart">
+    <h2>Carrito</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0</span></p>
+    <button onclick="checkout()">Comprar</button>
+  </aside>
+  <script src="script.js"></script>
+</body>
+</html>
