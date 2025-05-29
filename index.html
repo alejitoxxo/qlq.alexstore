@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>qlq.alexstore</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda online qlq.alexstore - Productos electrónicos al mejor precio">
+  <meta name="keywords" content="tienda online, electrónica, auriculares, teclados, monitores">
+  <title>qlq.alexstore - Tu tienda de electrónica</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -27,41 +29,49 @@
       </select>
     </section>
     
-    <div id="product-list" class="product-grid">
-      <!-- Productos se insertarán aquí -->
-    </div>
+    <div id="product-list" class="product-grid"></div>
   </main>
   
   <aside id="cart">
     <div class="cart-header">
-      <h2>Carrito <span id="close-cart" style="color: red; cursor: pointer; float: right;">✕</span></h2>
+      <h2>Carrito <span id="close-cart" class="close-btn">✕</span></h2>
     </div>
     <ul id="cart-items"></ul>
     <p>Total: $<span id="cart-total">0</span></p>
-    <button onclick="checkout()">Comprar</button>
+    <button id="checkout-btn">Pagar con MercadoPago</button>
   </aside>
   
-  <aside id="admin-panel">
-    <h2>Panel de Administración</h2>
-    <div id="admin-login">
-      <input type="password" id="admin-password" placeholder="Contraseña de administrador">
-      <button id="admin-login-btn">Ingresar</button>
-      <p id="login-message" style="color:red;"></p>
+  <div id="admin-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Panel de Administración</h2>
+      <div id="admin-login">
+        <input type="password" id="admin-password" placeholder="Contraseña de administrador">
+        <button id="admin-login-btn">Ingresar</button>
+        <p id="login-message" class="error-message"></p>
+      </div>
+      <div id="admin-content" style="display: none;">
+        <button id="admin-logout" class="logout-btn">Cerrar sesión</button>
+        <form id="product-form">
+          <input type="text" id="product-name" placeholder="Nombre del producto" required>
+          <input type="number" id="product-price" placeholder="Precio" required>
+          <input type="text" id="product-image" placeholder="URL de la imagen">
+          <textarea id="product-description" placeholder="Descripción"></textarea>
+          <input type="number" id="product-stock" placeholder="Stock" min="0" value="10" required>
+          <label>
+            <input type="checkbox" id="product-enabled" checked> Disponible
+          </label>
+          <button type="submit">Agregar Producto</button>
+        </form>
+        <div id="admin-product-list"></div>
+      </div>
     </div>
-    <div id="admin-content" style="display: none;">
-      <button id="admin-logout" style="float:right;">Cerrar sesión</button>
-      <form id="product-form">
-        <input type="text" id="product-name" placeholder="Nombre del producto" required>
-        <input type="number" id="product-price" placeholder="Precio" required>
-        <textarea id="product-description" placeholder="Descripción"></textarea>
-        <label>
-          <input type="checkbox" id="product-enabled" checked> Disponible
-        </label>
-        <button type="submit">Agregar Producto</button>
-      </form>
-      <div id="admin-product-list"></div>
-    </div>
-  </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 qlq.alexstore - Todos los derechos reservados</p>
+    <p><a href="politica-privacidad.html">Política de Privacidad</a> | <a href="terminos.html">Términos y Condiciones</a></p>
+  </footer>
   
   <script src="script.js"></script>
 </body>
