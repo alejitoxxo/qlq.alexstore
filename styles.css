@@ -116,7 +116,7 @@ header div {
   margin-bottom: 1em;
 }
 
-#product-form input {
+#product-form input, #product-form textarea {
   padding: 0.5em;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -129,12 +129,25 @@ header div {
   margin-bottom: 0.5em;
 }
 
+.admin-product > div {
+  flex: 1;
+}
+
 .admin-product button {
   background: #f44336;
+  margin: 0 2px;
+}
+
+.admin-product button.edit-btn {
+  background: #2196F3;
 }
 
 .admin-product button:hover {
   background: #d32f2f;
+}
+
+.admin-product button.edit-btn:hover {
+  background: #0b7dda;
 }
 
 .admin-btn {
@@ -143,4 +156,48 @@ header div {
 
 .admin-btn:hover {
   background: #0b7dda;
+}
+
+.cart-header {
+  position: relative;
+}
+
+#close-cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+}
+
+#admin-login {
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+#admin-login input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#admin-login button {
+  width: 100%;
+}
+
+#admin-content {
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 60px;
 }

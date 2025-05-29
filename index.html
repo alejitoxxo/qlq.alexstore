@@ -23,6 +23,7 @@
         <option value="0-25">$0 - $25</option>
         <option value="25-50">$25 - $50</option>
         <option value="50-100">$50 - $100</option>
+        <option value="100-">$100+</option>
       </select>
     </section>
     
@@ -32,7 +33,9 @@
   </main>
   
   <aside id="cart">
-    <h2>Carrito</h2>
+    <div class="cart-header">
+      <h2>Carrito <span id="close-cart" style="color: red; cursor: pointer; float: right;">✕</span></h2>
+    </div>
     <ul id="cart-items"></ul>
     <p>Total: $<span id="cart-total">0</span></p>
     <button onclick="checkout()">Comprar</button>
@@ -40,12 +43,24 @@
   
   <aside id="admin-panel">
     <h2>Panel de Administración</h2>
-    <form id="product-form">
-      <input type="text" id="product-name" placeholder="Nombre del producto" required>
-      <input type="number" id="product-price" placeholder="Precio" required>
-      <button type="submit">Agregar Producto</button>
-    </form>
-    <div id="admin-product-list"></div>
+    <div id="admin-login">
+      <input type="password" id="admin-password" placeholder="Contraseña de administrador">
+      <button id="admin-login-btn">Ingresar</button>
+      <p id="login-message" style="color:red;"></p>
+    </div>
+    <div id="admin-content" style="display: none;">
+      <button id="admin-logout" style="float:right;">Cerrar sesión</button>
+      <form id="product-form">
+        <input type="text" id="product-name" placeholder="Nombre del producto" required>
+        <input type="number" id="product-price" placeholder="Precio" required>
+        <textarea id="product-description" placeholder="Descripción"></textarea>
+        <label>
+          <input type="checkbox" id="product-enabled" checked> Disponible
+        </label>
+        <button type="submit">Agregar Producto</button>
+      </form>
+      <div id="admin-product-list"></div>
+    </div>
   </aside>
   
   <script src="script.js"></script>
